@@ -10,7 +10,7 @@ $packagesFolderExists = Test-Path $localPackagesFolder -PathType Container
 if($packagesFolderExists) 
 {
     Write-Host " -> Deleting previous packages in local packages..." -ForegroundColor Yellow
-    Get-ChildItem -Path $localPackagesFolder -Include fakexrmeasy.core* -Directory -Recurse -Force | Remove-Item -Recurse -Force
+    Get-ChildItem -Path $localPackagesFolder -Include fakexrmeasy.integration* -Directory -Recurse -Force | Remove-Item -Recurse -Force
 }
 
 ./build.ps1 -targetFramework $targetFrameworks

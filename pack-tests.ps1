@@ -7,8 +7,6 @@ Write-Host "Running with versionSuffix '$($versionSuffix)'..."
 
 $tempNupkgFolder = './nupkgs'
 
-./pack-tests-project.ps1 -targetFrameworks $targetFrameworks -projectName $projectName -projectPath $projectPath -packageIdPrefix $packageIdPrefix -versionSuffix $versionSuffix
-
 $packageIdPrefix = "FakeXrmEasy.IntegrationTests"
 $projectName = "FakeXrmEasy.Integration.Tests"
 $projectPath = "tests/FakeXrmEasy.Integration.Tests"
