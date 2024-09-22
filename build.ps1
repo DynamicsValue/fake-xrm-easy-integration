@@ -66,12 +66,12 @@ if(!($LASTEXITCODE -eq 0)) {
 Write-Host " -> Testing: configuration='$($configuration)', targetFramework='$($targetFrameworks)' PackTests=$($packTests)" -ForegroundColor Yellow
 if($targetFrameworks -eq "all")
 {
-    dotnet test --configuration $configuration --verbosity normal /p:PackTests=$packTests --collect:"XPlat code coverage" --settings tests/.runsettings --results-directory ./coverage
+    dotnet test --configuration $configuration --no-build --verbosity normal /p:PackTests=$packTests --collect:"XPlat code coverage" --settings tests/.runsettings --results-directory ./coverage
 
 }
 else 
 {
-    dotnet test --configuration $configuration --framework $targetFrameworks --verbosity normal /p:PackTests=$packTests --collect:"XPlat code coverage" --settings tests/.runsettings --results-directory ./coverage
+    dotnet test --configuration $configuration --no-build --framework $targetFrameworks --verbosity normal /p:PackTests=$packTests --collect:"XPlat code coverage" --settings tests/.runsettings --results-directory ./coverage
 }
 
 if(!($LASTEXITCODE -eq 0)) {
