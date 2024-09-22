@@ -139,26 +139,26 @@
     <PackageReference Include="FakeXrmEasy.Core.v9" Version="[2.6.0-*,3.0)" />
   </ItemGroup>
           
-  <ItemGroup Condition="'$(PackTests)' == ''">
+  <ItemGroup Condition="'$(PackTests)'==''">
     <ProjectReference Include="..\..\src\FakeXrmEasy.Integration\FakeXrmEasy.Integration.csproj" />
   </ItemGroup>
   
-  <ItemGroup Condition="'$(PackTests)' == 'true' And '$(Configuration)'=='FAKE_XRM_EASY'">
+  <ItemGroup Condition="'$(PackTests)'=='true' And '$(Configuration)'=='FAKE_XRM_EASY'">
     <PackageReference Include="FakeXrmEasy.Integration.v2011" Version="[2.6.0-*,3.0)" />
   </ItemGroup>
-  <ItemGroup Condition="'$(PackTests)' == 'true' And '$(Configuration)'=='FAKE_XRM_EASY_2013'">
+  <ItemGroup Condition="'$(PackTests)'=='true' And '$(Configuration)'=='FAKE_XRM_EASY_2013'">
     <PackageReference Include="FakeXrmEasy.Integration.v2013" Version="[2.6.0-*,3.0)" />
   </ItemGroup>
-  <ItemGroup Condition="'$(PackTests)' == 'true' And '$(Configuration)'=='FAKE_XRM_EASY_2015'">
+  <ItemGroup Condition="'$(PackTests)'=='true' And '$(Configuration)'=='FAKE_XRM_EASY_2015'">
     <PackageReference Include="FakeXrmEasy.Integration.v2015" Version="[2.6.0-*,3.0)" />
   </ItemGroup>
-  <ItemGroup Condition="'$(PackTests)' == 'true' And '$(Configuration)'=='FAKE_XRM_EASY_2016'">
+  <ItemGroup Condition="'$(PackTests)'=='true' And '$(Configuration)'=='FAKE_XRM_EASY_2016'">
     <PackageReference Include="FakeXrmEasy.Integration.v2016" Version="[2.6.0-*,3.0)" />
   </ItemGroup>
-  <ItemGroup Condition="'$(PackTests)' == 'true' And '$(Configuration)'=='FAKE_XRM_EASY_365'">
+  <ItemGroup Condition="'$(PackTests)'=='true' And '$(Configuration)'=='FAKE_XRM_EASY_365'">
     <PackageReference Include="FakeXrmEasy.Integration.v365" Version="[2.6.0-*,3.0)" />
   </ItemGroup>
-  <ItemGroup Condition="'$(PackTests)' == 'true' And '$(Configuration)'=='FAKE_XRM_EASY_9'">
+  <ItemGroup Condition="'$(PackTests)'=='true' And '$(Configuration)'=='FAKE_XRM_EASY_9'">
     <PackageReference Include="FakeXrmEasy.Integration.v9" Version="[2.6.0-*,3.0)" />
   </ItemGroup>
 
