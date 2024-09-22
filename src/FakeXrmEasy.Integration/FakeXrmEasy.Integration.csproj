@@ -11,14 +11,14 @@
         <VersionPrefix>2.6.0</VersionPrefix>
         <Authors>Jordi Montaña</Authors>
         <Company>Dynamics Value</Company>
-        <Title>FakeXrmEasy Core</Title>
+        <Title>FakeXrmEasy Integration</Title>
         <Copyright>(c) 2021 Dynamics Value</Copyright>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
         <PackageReleaseNotes>Please write release notes in CHANGELOG.md</PackageReleaseNotes>
         <PackageIcon>FakeXrmEasyLogo_128x128.png</PackageIcon>
         <PackageTags>dynamics;crm;365;unit testing;xrm;mock;mocking;fake;fakes;cds;common data service;power platform;fakexrmeasy</PackageTags>
-        <RepositoryUrl>https://github.com/DynamicsValue/fake-xrm-easy-core</RepositoryUrl>
+        <RepositoryUrl>https://github.com/DynamicsValue/fake-xrm-easy-integration</RepositoryUrl>
         <Configurations>FAKE_XRM_EASY_9;FAKE_XRM_EASY_365;FAKE_XRM_EASY_2016;FAKE_XRM_EASY_2015;FAKE_XRM_EASY_2013;FAKE_XRM_EASY</Configurations>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <AssemblyOriginatorKeyFile>..\..\fakexrmeasy.snk</AssemblyOriginatorKeyFile>
