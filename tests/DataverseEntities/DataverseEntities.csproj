@@ -15,27 +15,27 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)'=='FAKE_XRM_EASY'">
-    <DefineConstants>DEBUG;TRACE;</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)'=='FAKE_XRM_EASY_9'">
-    <DefineConstants>DEBUG;TRACE;</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)'=='FAKE_XRM_EASY_365'">
-    <DefineConstants>DEBUG;TRACE;</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)'=='FAKE_XRM_EASY_2016'">
-    <DefineConstants>DEBUG;TRACE;</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)'=='FAKE_XRM_EASY_2015'">
-    <DefineConstants>DEBUG;TRACE;</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;FAKE_XRM_EASY;FXE_V2</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)'=='FAKE_XRM_EASY_2013'">
-    <DefineConstants>DEBUG;TRACE;</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;FAKE_XRM_EASY_2013;FXE_V2</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='FAKE_XRM_EASY_2015'">
+    <DefineConstants>DEBUG;TRACE;FAKE_XRM_EASY_2015;FXE_V2</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='FAKE_XRM_EASY_2016'">
+    <DefineConstants>DEBUG;TRACE;FAKE_XRM_EASY_2016;FXE_V2</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='FAKE_XRM_EASY_365'">
+    <DefineConstants>DEBUG;TRACE;FAKE_XRM_EASY_365;FXE_V2</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='FAKE_XRM_EASY_9'">
+    <DefineConstants>DEBUG;TRACE;FAKE_XRM_EASY_9;FXE_V2</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net462' And '$(Configuration)'=='FAKE_XRM_EASY_9'">
