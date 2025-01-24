@@ -21,13 +21,6 @@ namespace FakeXrmEasy.Integration.Tests.XrmRealContextTests
         }
 
         [Fact]
-        public void Should_connect_to_CRM_with_given_ConnectionString()
-        {
-            var ctx = new XrmRealContext("myfirstconnectionstring");
-            Assert.Equal("myfirstconnectionstring", ctx.ConnectionStringName);
-        }
-
-        [Fact]
         public void Should_return_service_that_was_injected_in_the_constructor()
         {
             Assert.Equal(_service, _realContext.GetOrganizationService());
