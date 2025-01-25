@@ -85,18 +85,18 @@ jobs:
       run: dotnet nuget enable source github 
 
     - name: Quality Gate
-      uses: DynamicsValue/dotnet-sonarscanner@v2.3
+      uses: DynamicsValue/dotnet-sonarscanner@v2.4.7
       with:
-        buildCommand: dotnet build . --configuration 'FAKE_XRM_EASY_9' --framework netcoreapp3.1
-        testCommand: dotnet test . --configuration 'FAKE_XRM_EASY_9' --framework netcoreapp3.1 --verbosity normal --collect:"XPlat code coverage" --settings tests/.runsettings --results-directory ./coverage
+        buildCommand: dotnet build . --configuration 'FAKE_XRM_EASY_9' --framework net6.0
+        testCommand: dotnet test . --configuration 'FAKE_XRM_EASY_9' --framework net6.0 --verbosity normal --collect:"XPlat code coverage" --settings tests/.runsettings --results-directory ./coverage
         projectKey: ${{ secrets.SONAR_PROJECT_KEY }}
         projectName: fake-xrm-easy-integration
-        sonarOrganisation: dynamicsvalue
+        sonarOrganisation: ${{ vars.SONAR_ORG_NAME }}
         beginArguments: >
-            /d:sonar.verbose="true"
-            /d:sonar.qualitygate.wait="true"
-            /d:sonar.cs.opencover.reportsPaths='"coverage/**/coverage.opencover.xml"'
-            /d:sonar.coverage.exclusions='"tests/**/**"'
+          /d:sonar.verbose="true"
+          /d:sonar.qualitygate.wait="true"
+          /d:sonar.cs.opencover.reportsPaths='"coverage/**/coverage.opencover.xml"'
+          /d:sonar.coverage.exclusions='"tests/**/**"'
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
