@@ -1,4 +1,5 @@
-﻿using Microsoft.Xrm.Sdk;
+﻿#if FXE_V2
+using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Workflow;
 using System;
 using System.Activities;
@@ -42,3 +43,4 @@ namespace FakeXrmEasy.CodeActivities.Tests.CodeActivitiesForTesting
         public OutArgument<EntityReference> taskCreated { get; set; }
     }
 }
+#endif

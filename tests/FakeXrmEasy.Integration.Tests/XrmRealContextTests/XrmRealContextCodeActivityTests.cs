@@ -1,3 +1,4 @@
+#if FXE_V2
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -42,3 +43,4 @@ namespace FakeXrmEasy.Integration.Tests.XrmRealContextTests
         }        
     }
 }
+#endif
