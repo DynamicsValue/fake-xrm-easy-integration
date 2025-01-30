@@ -17,8 +17,6 @@ using FakeXrmEasy.Abstractions.Enums;
 using FakeXrmEasy.Abstractions.Exceptions;
 using Microsoft.PowerPlatform.Dataverse.Client;
 
-using Microsoft.PowerPlatform.Dataverse.Client;
-
 namespace FakeXrmEasy
 {
     /// <summary>
@@ -68,6 +66,12 @@ namespace FakeXrmEasy
         private IXrmFakedTracingService _fakeTracingService;
 
         private Dictionary<string, object> _properties;
+
+        /// <summary>
+        /// Returns the connection string that was used to create this XrmRealContext
+        /// </summary>
+        public string ConnectionString => _connectionString;
+        
 
         /// <summary>
         /// A constructor that will use connection string
@@ -199,7 +203,7 @@ namespace FakeXrmEasy
         {
             if (string.IsNullOrWhiteSpace(_connectionString))
             {
-                throw new Exception("The ConnectionString property is null or empty");
+                throw new EmptyConnectionStringException();
             }
 
             // Connect to the Dataverse with a connection string.
