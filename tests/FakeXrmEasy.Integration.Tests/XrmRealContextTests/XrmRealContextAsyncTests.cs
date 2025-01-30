@@ -32,51 +32,6 @@ public class XrmRealContextAsyncTests: FakeXrmEasyTestsBase
         }
 
         [Fact]
-        public void Should_set_property()
-        {
-            var customProperty = new CustomProperty();
-            _realContext.SetProperty(customProperty);
-
-            Assert.True(_realContext.HasProperty<CustomProperty>());
-
-            var property = _realContext.GetProperty<CustomProperty>();
-            Assert.Equal(customProperty, property);
-        }
-
-        [Fact]
-        public void Should_throw_type_access_exception_if_property_was_not_found()
-        {
-            Assert.Throws<TypeAccessException>(() => _realContext.GetProperty<CustomProperty>());
-        }
-
-        [Fact]
-        public void Should_update_property_if_it_was_set()
-        {
-            var customProperty = new CustomProperty();
-            _realContext.SetProperty(customProperty);
-
-            var newProperty = new CustomProperty();
-            _realContext.SetProperty(newProperty);
-
-            var property = _realContext.GetProperty<CustomProperty>();
-            Assert.Equal(newProperty, property);
-        }
-
-        [Fact]
-        public void Should_return_fake_tracing_service()
-        {
-            var tracingService = _realContext.GetTracingService();
-            Assert.IsType<XrmFakedTracingService>(tracingService);
-        }
-
-        [Fact]
-        public void Should_return_license_exception_if_not_set_when_getting_an_organization_service()
-        {
-            var ctx = new XrmRealContext(_service);
-            Assert.Throws<LicenseException>(() => ctx.GetOrganizationService());
-        }
-
-        [Fact]
         public void Should_retrieve_fake_organization_service() 
         {           
             var ctx = new XrmRealContext(_service, _serviceAsync, _serviceAsync2);
@@ -112,5 +67,23 @@ public class XrmRealContextAsyncTests: FakeXrmEasyTestsBase
 
             var retrieved = ctx.GetProperty<CustomProperty>(); 
             Assert.Equal(prop, retrieved);
+        }
+
+        [Fact]
+        public void Should_return_real_service_client_if_no_fake_service_async_was_set_in_the_constructor()
+        {
+            var ctx = new XrmRealContext("dummy connection");
+
+            var ex = Assert.Throws<ArgumentException>(() => ctx.GetAsyncOrganizationService());
+            Assert.Contains("AuthType is invalid", ex.Message);
+        }
+        
+        [Fact]
+        public void Should_return_real_service_client_if_no_fake_service_async2_was_set_in_the_constructor()
+        {
+            var ctx = new XrmRealContext("dummy connection");
+
+            var ex = Assert.Throws<ArgumentException>(() => ctx.GetAsyncOrganizationService2());
+            Assert.Contains("AuthType is invalid", ex.Message);
         }
     }
