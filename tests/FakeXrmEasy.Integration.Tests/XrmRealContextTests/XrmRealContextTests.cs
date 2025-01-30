@@ -21,18 +21,27 @@ namespace FakeXrmEasy.Integration.Tests.XrmRealContextTests
         }
 
         [Fact]
-        public void Should_connect_to_CRM_with_given_ConnectionString()
-        {
-            var ctx = new XrmRealContext("myfirstconnectionstring");
-            Assert.Equal("myfirstconnectionstring", ctx.ConnectionStringName);
-        }
-
-        [Fact]
         public void Should_return_service_that_was_injected_in_the_constructor()
         {
             Assert.Equal(_service, _realContext.GetOrganizationService());
         }
 
+        [Fact]
+        public void Should_return_connection_string_if_it_was_set_in_the_constructor()
+        {
+            var dummyConnString = "Some fake conn string";
+            var context = new XrmRealContext(dummyConnString);
+            Assert.Equal(dummyConnString, context.ConnectionString);
+        }
+        
+        [Fact]
+        public void Should_throw_empty_connection_string_exception_is_the_connection_constructor_was_not_used_or_empty()
+        {
+            var ctx = new XrmRealContext("");
+            ctx.LicenseContext = FakeXrmEasyLicense.RPL_1_5;
+            Assert.Throws<EmptyConnectionStringException>(() => ctx.GetOrganizationService());
+        }
+        
         [Fact]
         public void Should_set_property()
         {
