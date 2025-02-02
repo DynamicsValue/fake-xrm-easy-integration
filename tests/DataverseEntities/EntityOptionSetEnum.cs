@@ -10,8 +10,6 @@
 
 namespace DataverseEntities
 {
-	
-	
 	internal sealed class EntityOptionSetEnum
 	{
 		
